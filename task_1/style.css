@@ -1,0 +1,107 @@
+/* For project */
+body {
+  padding: 10px;
+}
+
+div {
+  width: 300px;
+  height: 200px;
+}
+
+div:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.ukraine,
+.czech,
+.japan,
+.iceland {
+  position: relative;
+}
+
+.ukraine::after,
+.ukraine::before,
+.japan::before,
+.czech::after,
+.czech::before {
+  content: "";
+  position: absolute;
+}
+
+/* Ukraine, Czech, Japan */
+.ukraine::after,
+.ukraine::before,
+.czech::before {
+  width: 100%;
+  height: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ukraine::before {
+  top: 0;
+  background: rgb(0, 102, 255);
+}
+.ukraine::after {
+  bottom: 0;
+  background: rgb(255, 230, 0);
+}
+.japan,
+.czech {
+  background-color: #fff;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+.japan:before {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 0, 0);
+  border-radius: 100%;
+}
+.czech::before {
+  z-index: 1;
+  bottom: 0;
+  background: #d7141a;
+}
+.czech::after {
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 100px solid transparent;
+  border-left: 150px solid #11457e;
+  border-bottom: 100px solid transparent;
+}
+
+/* Iceland */
+.iceland {
+  background: #02529c;
+  overflow: hidden;
+}
+.vertical,
+.horizontal,
+.vertical_additional {
+  position: absolute;
+  background-color: rgb(255, 0, 0);
+  border: 10px solid #fff;
+}
+.vertical,
+.vertical_additional {
+  left: 80px;
+  height: 100%;
+  width: 25px;
+  border-top: none;
+  border-bottom: none;
+}
+.horizontal {
+  top: 40%;
+  height: 25px;
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+.vertical_additional {
+  left: 90px;
+  border: none;
+}
